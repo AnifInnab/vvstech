@@ -4,8 +4,9 @@ import { company } from '../data/company'
 import { services } from '../data/services'
 import { asset } from '../lib/utils'
 
+const year = new Date().getFullYear()
+
 export function Footer() {
-  const year = new Date().getFullYear()
   return (
     <footer className="bg-navy-950 text-white">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12">

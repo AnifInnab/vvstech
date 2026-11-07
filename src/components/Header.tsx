@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { Menu, Phone, X } from 'lucide-react'
 import { company } from '../data/company'
 import { asset } from '../lib/utils'
@@ -13,9 +13,7 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false)
-  const { pathname } = useLocation()
-
-  useEffect(() => setOpen(false), [pathname])
+  const close = () => setOpen(false)
 
   return (
     <header className="sticky top-0 z-50 border-b border-steel-100 bg-white/95 backdrop-blur">
@@ -83,6 +81,7 @@ export function Header() {
                 key={item.to}
                 to={item.to}
                 end={item.end}
+                onClick={close}
                 className={({ isActive }) =>
                   `rounded-md px-3 py-3 text-base font-medium ${
                     isActive ? 'bg-brand-50 text-brand-600' : 'text-navy-900 hover:bg-steel-50'
@@ -97,7 +96,7 @@ export function Header() {
                 <Phone className="size-4" />
                 Ring {company.phone}
               </a>
-              <Link to="/kontakt" className="btn-primary">
+              <Link to="/kontakt" className="btn-primary" onClick={close}>
                 Begär offert
               </Link>
             </div>

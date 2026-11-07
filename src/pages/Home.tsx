@@ -7,6 +7,8 @@ import { company, trustBadges } from '../data/company'
 import { pillars, services } from '../data/services'
 import { asset, usePageTitle } from '../lib/utils'
 
+const yearsActive = new Date().getFullYear() - company.founded
+
 const steps = [
   {
     n: '01',
@@ -203,7 +205,7 @@ export function Home() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { v: `${new Date().getFullYear() - company.founded}+`, l: 'år i branschen' },
+              { v: `${yearsActive}+`, l: 'år i branschen' },
               { v: '2 500+', l: 'genomförda uppdrag' },
               { v: '4,9 / 5', l: 'i kundbetyg' },
               { v: '24/7', l: 'jourberedskap' },
