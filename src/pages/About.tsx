@@ -72,12 +72,12 @@ export function About() {
             </div>
           </div>
           <div className="lg:col-span-5">
-            <div className="rounded-lg bg-navy-900 p-8 text-white">
-              <h3 className="text-lg font-semibold">Behörigheter & certifikat</h3>
+            <div className="rounded-xl bg-gradient-to-br from-navy-900 to-navy-700 p-8 text-white">
+              <h3 className="text-lg font-semibold text-white">Behörigheter & certifikat</h3>
               <ul className="mt-5 space-y-3">
                 {certs.map((c) => (
                   <li key={c} className="flex items-start gap-3 text-sm text-white/85">
-                    <ShieldCheck className="mt-0.5 size-4 shrink-0 text-brand-400" />
+                    <ShieldCheck className="mt-0.5 size-4 shrink-0 text-brand-300" />
                     {c}
                   </li>
                 ))}
@@ -87,13 +87,13 @@ export function About() {
         </div>
       </Section>
 
-      <Section tone="gray" eyebrow="Våra värderingar" title="Så arbetar vi" align="center">
+      <Section tone="ice" eyebrow="Våra värderingar" title="Så arbetar vi" align="center">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => {
             const Icon = v.icon
             return (
-              <div key={v.title} className="rounded-lg border border-steel-100 bg-white p-7 shadow-card">
-                <div className="flex size-12 items-center justify-center rounded-md bg-brand-50 text-brand-600">
+              <div key={v.title} className="card p-7">
+                <div className="flex size-12 items-center justify-center rounded-lg bg-brand-50 text-brand-600 ring-1 ring-brand-100">
                   <Icon className="size-6" strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold">{v.title}</h3>

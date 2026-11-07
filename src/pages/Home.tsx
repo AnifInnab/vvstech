@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, Phone, ShieldCheck, Star } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Clock, Phone, ShieldCheck, Star } from 'lucide-react'
 import { Section } from '../components/Section'
 import { ServiceCard } from '../components/ServiceCard'
 import { CtaBand } from '../components/CtaBand'
@@ -48,71 +48,105 @@ const testimonials = [
   },
 ]
 
+const stats = [
+  { v: `${yearsActive}+`, l: 'år i branschen' },
+  { v: '2 500+', l: 'genomförda uppdrag' },
+  { v: '4,9 / 5', l: 'i kundbetyg' },
+  { v: '24/7', l: 'jourberedskap' },
+]
+
 export function Home() {
   usePageTitle()
   const featured = services.filter((s) => s.featured)
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-900 text-white">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="brand-slash absolute -right-24 top-0 h-full w-[46%] bg-navy-800/70" />
-          <div className="brand-slash absolute -right-48 top-0 h-full w-[34%] bg-brand-500/90" />
+      {/* Hero – ljus, luftig, med logotypens slash-former som mjuk dekor */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-ice-100 via-ice-50 to-white">
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          <div className="brand-slash absolute -right-16 top-0 h-full w-[44%] bg-brand-100/50" />
+          <div className="brand-slash absolute -right-40 top-0 h-full w-[30%] bg-brand-200/40" />
           <img
-            src={asset('mark-white.svg')}
+            src={asset('favicon.svg')}
             alt=""
-            aria-hidden
-            className="absolute right-[6%] top-1/2 hidden h-[62%] -translate-y-1/2 opacity-[0.08] lg:block"
+            className="absolute -bottom-10 right-[4%] hidden h-[70%] w-auto opacity-[0.035] lg:block"
           />
         </div>
 
-        <div className="container-x relative grid gap-12 py-24 sm:py-28 lg:grid-cols-12 lg:py-36">
+        <div className="container-x relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-7">
-            <p className="eyebrow text-brand-400">Auktoriserat VVS-företag · {company.serviceArea}</p>
-            <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Teknik för hållbara
-              <br />
-              <span className="text-brand-400">inomhusmiljöer</span>
+            <p className="eyebrow">Auktoriserat VVS-företag · {company.serviceArea}</p>
+            <h1 className="mt-5 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              Teknik för hållbara <span className="text-brand-600">inomhusmiljöer</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-steel-500">
               Värme, vatten, ventilation och kyla – installerat, servat och optimerat av certifierade
               tekniker. Från läckande kran till komplett stambyte.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/kontakt" className="btn-primary">
                 Begär offert
                 <ArrowRight className="size-4" />
               </Link>
-              <a href={company.phoneHref} className="btn-ghost-light">
+              <a href={company.phoneHref} className="btn-outline">
                 <Phone className="size-4" />
                 Ring {company.phone}
               </a>
             </div>
-            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/80 sm:grid-cols-4">
+            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
               {trustBadges.map((b) => (
-                <li key={b.label} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-400" />
-                  <span>
-                    <span className="font-semibold text-white">{b.label}</span>
+                <li key={b.label} className="flex items-start gap-2.5">
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-600" />
+                  <span className="text-sm leading-snug">
+                    <span className="font-semibold text-navy-900">{b.label}</span>
                     <br />
-                    <span className="text-xs text-white/55">{b.sub}</span>
+                    <span className="text-xs text-steel-500">{b.sub}</span>
                   </span>
                 </li>
               ))}
             </ul>
           </div>
+
+          <aside className="lg:col-span-5">
+            <div className="card relative overflow-hidden p-7 sm:p-8">
+              <div className="brand-slash absolute -right-6 -top-6 h-24 w-28 bg-brand-50" aria-hidden />
+              <p className="eyebrow">Så här går det till</p>
+              <h2 className="mt-2 text-2xl font-bold">Kostnadsfri offert inom en arbetsdag</h2>
+              <ol className="mt-6 space-y-4">
+                {steps.map((s, i) => (
+                  <li key={s.n} className="flex gap-4">
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <div className="font-semibold text-navy-900">{s.title}</div>
+                      <p className="mt-0.5 text-sm leading-relaxed text-steel-500">{s.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <div className="mt-7 flex items-center gap-3 rounded-lg bg-ice-100 px-4 py-3 text-sm">
+                <Clock className="size-4 shrink-0 text-brand-600" />
+                <span className="text-steel-700">
+                  Akut? Jour dygnet runt:{' '}
+                  <a href={company.emergencyPhoneHref} className="font-semibold text-navy-900 hover:text-brand-600">
+                    {company.emergencyPhone}
+                  </a>
+                </span>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
 
       {/* Pillars */}
-      <section className="border-b border-steel-100 bg-white">
+      <section className="border-y border-steel-100 bg-white">
         <div className="container-x grid divide-y divide-steel-100 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
           {pillars.map((p) => {
             const Icon = p.icon
             return (
-              <div key={p.title} className="flex gap-4 px-0 py-8 lg:px-8 lg:first:pl-0 lg:last:pr-0">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-md bg-navy-900 text-white">
+              <div key={p.title} className="flex gap-4 py-7 lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 ring-1 ring-brand-100">
                   <Icon className="size-5" strokeWidth={1.75} />
                 </div>
                 <div>
@@ -127,7 +161,7 @@ export function Home() {
 
       {/* Services */}
       <Section
-        tone="gray"
+        tone="ice"
         eyebrow="Våra tjänster"
         title="Allt inom VVS – under ett tak"
         lead="Vi är ett fullservicebolag. Oavsett om du är privatperson, bostadsrättsförening eller fastighetsägare hjälper vi dig med helhetslösningar."
@@ -138,49 +172,32 @@ export function Home() {
           ))}
           <Link
             to="/tjanster"
-            className="group flex flex-col justify-between rounded-lg bg-navy-900 p-6 text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-navy-800"
+            className="group flex flex-col justify-between rounded-xl bg-gradient-to-br from-navy-900 to-navy-700 p-6 text-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
           >
             <div>
-              <p className="eyebrow text-brand-400">+{services.length - featured.length} tjänster till</p>
-              <h3 className="mt-3 text-2xl font-bold">Se hela vårt utbud</h3>
-              <p className="mt-2 text-sm text-white/70">
+              <p className="eyebrow text-brand-300">+{services.length - featured.length} tjänster till</p>
+              <h3 className="mt-3 text-2xl font-bold text-white">Se hela vårt utbud</h3>
+              <p className="mt-2 text-sm text-white/75">
                 Stambyte, avlopp, nyproduktion, kyla, jour och mer.
               </p>
             </div>
             <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold">
               Alla tjänster
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Link>
         </div>
       </Section>
 
-      {/* Process */}
-      <Section
-        eyebrow="Så fungerar det"
-        title="Från förfrågan till färdigt jobb i tre steg"
-        align="center"
-      >
-        <ol className="grid gap-8 md:grid-cols-3">
-          {steps.map((s) => (
-            <li key={s.n} className="relative rounded-lg border border-steel-100 p-7">
-              <span className="text-4xl font-extrabold text-brand-100">{s.n}</span>
-              <h3 className="mt-4 text-lg font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-steel-500">{s.text}</p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* About teaser */}
-      <section className="bg-navy-900 text-white">
-        <div className="container-x grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-24">
+      {/* About + stats */}
+      <Section>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="eyebrow text-brand-400">Om VVS tech</p>
+            <p className="eyebrow">Om VVS tech</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               Ett modernt VVS-företag med hantverket i fokus
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-white/70">
+            <p className="mt-5 text-lg leading-relaxed text-steel-500">
               Sedan {company.founded} har vi hjälpt hushåll, föreningar och fastighetsägare i{' '}
               {company.serviceArea} med driftsäkra och energieffektiva installationer. Vi kombinerar
               gediget hantverk med modern teknik, digital dokumentation och tydlig kommunikation.
@@ -192,38 +209,42 @@ export function Home() {
                 'Fast pris på de flesta uppdrag',
                 'Garanti på allt arbete vi utför',
               ].map((t) => (
-                <li key={t} className="flex items-center gap-3 text-white/85">
-                  <ShieldCheck className="size-5 shrink-0 text-brand-400" />
+                <li key={t} className="flex items-center gap-3 text-navy-900">
+                  <ShieldCheck className="size-5 shrink-0 text-brand-600" />
                   {t}
                 </li>
               ))}
             </ul>
-            <Link to="/om-oss" className="btn-primary mt-9">
+            <Link to="/om-oss" className="btn-outline mt-9">
               Läs mer om oss
               <ArrowRight className="size-4" />
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { v: `${yearsActive}+`, l: 'år i branschen' },
-              { v: '2 500+', l: 'genomförda uppdrag' },
-              { v: '4,9 / 5', l: 'i kundbetyg' },
-              { v: '24/7', l: 'jourberedskap' },
-            ].map((k) => (
-              <div key={k.l} className="rounded-lg border border-white/10 bg-white/5 p-6">
-                <div className="text-3xl font-extrabold text-brand-400 sm:text-4xl">{k.v}</div>
-                <div className="mt-1 text-sm text-white/65">{k.l}</div>
+            {stats.map((k, i) => (
+              <div
+                key={k.l}
+                className={`rounded-xl p-6 ring-1 ${
+                  i === 0
+                    ? 'bg-gradient-to-br from-navy-900 to-navy-700 text-white ring-navy-900'
+                    : 'bg-ice-50 ring-navy-900/[0.06]'
+                }`}
+              >
+                <div className={`text-3xl font-bold tracking-tight sm:text-4xl ${i === 0 ? 'text-white' : 'text-navy-900'}`}>
+                  {k.v}
+                </div>
+                <div className={`mt-1 text-sm ${i === 0 ? 'text-white/70' : 'text-steel-500'}`}>{k.l}</div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Testimonials */}
-      <Section eyebrow="Kundröster" title="Vad våra kunder säger" align="center">
+      <Section tone="ice" eyebrow="Kundröster" title="Vad våra kunder säger" align="center">
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} className="rounded-lg border border-steel-100 bg-white p-7 shadow-card">
+            <figure key={t.name} className="card p-7">
               <div className="flex gap-0.5 text-brand-500">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-4 fill-current" />
@@ -233,7 +254,7 @@ export function Home() {
                 “{t.quote}”
               </blockquote>
               <figcaption className="mt-5 text-sm">
-                <span className="font-semibold">{t.name}</span>
+                <span className="font-semibold text-navy-900">{t.name}</span>
                 <span className="text-steel-500"> · {t.role}</span>
               </figcaption>
             </figure>

@@ -17,7 +17,7 @@ export function Contact() {
       <section className="bg-white py-16 sm:py-20">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="rounded-lg border border-steel-100 bg-white p-6 shadow-card sm:p-8">
+            <div className="card p-6 sm:p-8">
               <h2 className="text-2xl font-bold">Offertförfrågan</h2>
               <p className="mt-2 text-sm text-steel-500">
                 Kostnadsfritt och utan förpliktelser. Fält markerade med * är obligatoriska.
@@ -29,9 +29,9 @@ export function Contact() {
           </div>
 
           <aside className="space-y-6 lg:col-span-5">
-            <div className="rounded-lg bg-navy-900 p-7 text-white">
-              <h3 className="text-lg font-semibold">Akut hjälp – jour dygnet runt</h3>
-              <p className="mt-2 text-sm text-white/70">
+            <div className="rounded-xl bg-gradient-to-br from-navy-900 to-navy-700 p-7 text-white">
+              <h3 className="text-lg font-semibold text-white">Akut hjälp – jour dygnet runt</h3>
+              <p className="mt-2 text-sm text-white/75">
                 Vattenläcka, rörbrott eller värmebortfall? Ring oss direkt så rycker vi ut.
               </p>
               <a href={company.emergencyPhoneHref} className="btn-primary mt-5 w-full">
@@ -40,7 +40,7 @@ export function Contact() {
               </a>
             </div>
 
-            <div className="rounded-lg border border-steel-100 p-7">
+            <div className="card p-7">
               <h3 className="text-lg font-semibold">Kontaktuppgifter</h3>
               <ul className="mt-5 space-y-5 text-sm">
                 <li className="flex gap-4">
@@ -90,7 +90,7 @@ export function Contact() {
               </ul>
             </div>
 
-            <div className="overflow-hidden rounded-lg border border-steel-100 bg-steel-100">
+            <div className="overflow-hidden rounded-xl bg-ice-100 ring-1 ring-navy-900/[0.06]">
               {/* Byt till riktig Google Maps-embed när adressen är klar */}
               <div className="flex aspect-[4/3] items-center justify-center text-sm text-steel-500">
                 Karta – {company.address.city}

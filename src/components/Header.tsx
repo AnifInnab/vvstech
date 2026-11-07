@@ -16,13 +16,13 @@ export function Header() {
   const close = () => setOpen(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-steel-100 bg-white/95 backdrop-blur">
-      <div className="hidden bg-navy-900 text-white md:block">
+    <header className="sticky top-0 z-50 border-b border-steel-100 bg-white/90 backdrop-blur-md">
+      <div className="hidden border-b border-steel-100 bg-ice-50 md:block">
         <div className="container-x flex h-9 items-center justify-between text-xs">
-          <span className="text-white/70">Auktoriserat VVS-företag · Säker Vatten · {company.serviceArea}</span>
+          <span className="text-steel-500">Auktoriserat VVS-företag · Säker Vatten · {company.serviceArea}</span>
           <div className="flex items-center gap-5">
-            <span className="text-white/70">{company.hours.weekdays}</span>
-            <a href={company.emergencyPhoneHref} className="font-semibold hover:text-brand-400">
+            <span className="text-steel-500">{company.hours.weekdays}</span>
+            <a href={company.emergencyPhoneHref} className="font-semibold text-navy-900 hover:text-brand-600">
               Jour 24/7: {company.emergencyPhone}
             </a>
           </div>
@@ -41,8 +41,8 @@ export function Header() {
               to={item.to}
               end={item.end}
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-brand-500 ${
-                  isActive ? 'text-brand-500' : 'text-navy-900'
+                `text-sm font-medium transition-colors hover:text-brand-600 ${
+                  isActive ? 'text-brand-600' : 'text-steel-700'
                 }`
               }
             >

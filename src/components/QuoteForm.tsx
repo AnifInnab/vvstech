@@ -38,8 +38,8 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
 
   if (status === 'sent') {
     return (
-      <div className="rounded-lg border border-brand-100 bg-brand-50 p-8 text-center">
-        <CheckCircle2 className="mx-auto size-12 text-brand-500" />
+      <div className="rounded-xl bg-brand-50 p-8 text-center ring-1 ring-brand-100">
+        <CheckCircle2 className="mx-auto size-12 text-brand-600" />
         <h3 className="mt-4 text-xl font-semibold">Tack för din förfrågan!</h3>
         <p className="mt-2 text-steel-500">
           Din e-postklient har öppnats med förfrågan ifylld. Skicka mailet så återkommer vi inom en
@@ -194,7 +194,7 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
       <label className="flex items-start gap-3 text-sm text-steel-700">
         <input
           type="checkbox"
-          className="mt-0.5 size-4 rounded border-steel-200 accent-brand-500"
+          className="mt-0.5 size-4 rounded border-steel-200 accent-brand-600"
           checked={form.rot}
           onChange={(e) => set('rot', e.target.checked)}
         />

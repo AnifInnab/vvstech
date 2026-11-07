@@ -20,7 +20,7 @@ export function Services() {
         const items = services.filter((s) => s.category === cat)
         if (!items.length) return null
         return (
-          <Section key={cat} tone={i % 2 === 0 ? 'white' : 'gray'} className="!py-14" title={cat}>
+          <Section key={cat} tone={i % 2 === 0 ? 'white' : 'ice'} className="!py-14" title={cat}>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((s) => (
                 <ServiceCard key={s.slug} service={s} />

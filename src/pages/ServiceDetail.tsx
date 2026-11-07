@@ -31,22 +31,22 @@ export function ServiceDetail() {
               <ArrowLeft className="size-4" />
               Alla tjänster
             </Link>
-            <div className="mt-6 flex size-14 items-center justify-center rounded-md bg-brand-50 text-brand-600">
+            <div className="mt-6 flex size-14 items-center justify-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100">
               <Icon className="size-7" strokeWidth={1.75} />
             </div>
-            <p className="mt-6 text-lg leading-relaxed text-navy-900">{service.intro}</p>
+            <p className="mt-6 text-lg leading-relaxed text-steel-700">{service.intro}</p>
 
             <h2 className="mt-10 text-xl font-semibold">Det här hjälper vi dig med</h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {service.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-[15px]">
-                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand-500" />
+                <li key={b} className="flex items-start gap-3 text-[15px] text-navy-900">
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand-600" />
                   {b}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 flex items-start gap-3 rounded-lg bg-steel-50 p-5">
+            <div className="mt-10 flex items-start gap-3 rounded-xl bg-ice-50 p-5 ring-1 ring-navy-900/[0.06]">
               <Users className="mt-0.5 size-5 shrink-0 text-brand-600" />
               <div>
                 <div className="text-sm font-semibold">För vem?</div>
@@ -54,7 +54,7 @@ export function ServiceDetail() {
               </div>
             </div>
 
-            <div className="mt-10 rounded-lg border border-steel-100 p-6">
+            <div className="card mt-10 p-6">
               <h3 className="font-semibold">Akut behov?</h3>
               <p className="mt-1 text-sm text-steel-500">
                 Vid vattenläcka eller värmebortfall – ring vår jour direkt.
@@ -67,7 +67,7 @@ export function ServiceDetail() {
           </article>
 
           <aside className="lg:col-span-5">
-            <div className="rounded-lg border border-steel-100 bg-white p-6 shadow-card sm:p-8 lg:sticky lg:top-28">
+            <div className="card p-6 sm:p-8 lg:sticky lg:top-28">
               <p className="eyebrow">Kostnadsfri offert</p>
               <h2 className="mt-2 text-2xl font-bold">Begär offert på {service.title.toLowerCase()}</h2>
               <p className="mt-2 text-sm text-steel-500">Vi återkommer inom en arbetsdag.</p>
@@ -80,7 +80,7 @@ export function ServiceDetail() {
       </section>
 
       {related.length > 0 && (
-        <section className="bg-steel-50 py-16">
+        <section className="bg-ice-50 py-16">
           <div className="container-x">
             <h2 className="text-2xl font-bold">Relaterade tjänster</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

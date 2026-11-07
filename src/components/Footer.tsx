@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <img src={asset('logo-white.svg')} alt="VVS tech" className="h-9 w-auto" />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65">
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
             {company.tagline}. Vi är en auktoriserad VVS-firma som levererar värme, vatten, ventilation
             och kyla med hög kvalitet till privatpersoner, bostadsrättsföreningar och fastighetsägare i{' '}
             {company.serviceArea}.
@@ -21,7 +21,7 @@ export function Footer() {
             {['Säker Vatten', 'ROT-avdrag', 'F-skatt', 'Jour 24/7'].map((b) => (
               <span
                 key={b}
-                className="rounded border border-white/15 px-2.5 py-1 text-xs font-medium text-white/80"
+                className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-white/85"
               >
                 {b}
               </span>
@@ -30,7 +30,7 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-3">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50">Tjänster</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60">Tjänster</h3>
           <ul className="mt-4 space-y-2.5">
             {services.map((s) => (
               <li key={s.slug}>
@@ -43,7 +43,7 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50">Företaget</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60">Företaget</h3>
           <ul className="mt-4 space-y-2.5">
             {[
               { to: '/om-oss', label: 'Om oss' },
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-3">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50">Kontakt</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60">Kontakt</h3>
           <ul className="mt-4 space-y-3 text-sm text-white/80">
             <li className="flex gap-3">
               <Phone className="mt-0.5 size-4 shrink-0 text-brand-400" />
@@ -69,7 +69,7 @@ export function Footer() {
                 <a href={company.phoneHref} className="hover:text-white">
                   {company.phone}
                 </a>
-                <div className="text-xs text-white/50">
+                <div className="text-xs text-white/60">
                   Jour:{' '}
                   <a href={company.emergencyPhoneHref} className="hover:text-white">
                     {company.emergencyPhone}
@@ -96,7 +96,7 @@ export function Footer() {
               <span>
                 {company.hours.weekdays}
                 <br />
-                <span className="text-white/50">{company.hours.emergency}</span>
+                <span className="text-white/60">{company.hours.emergency}</span>
               </span>
             </li>
           </ul>
@@ -104,7 +104,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x flex flex-col gap-2 py-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-x flex flex-col gap-2 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {year} {company.legalName} · Org.nr {company.orgNumber}
           </span>
