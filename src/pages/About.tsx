@@ -1,4 +1,4 @@
-import { Award, HeartHandshake, Leaf, ShieldCheck } from 'lucide-react'
+import { Award, HeartHandshake, Leaf, MapPin, ShieldCheck } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Section } from '../components/Section'
 import { CtaBand } from '../components/CtaBand'
@@ -36,6 +36,9 @@ const certs = [
   'ID06 – samtliga medarbetare',
   'F-skatt, ansvars- och entreprenadförsäkring',
 ]
+
+// Platshållare – justera efter företagets faktiska område
+const towns = ['Malmö', 'Lund', 'Helsingborg', 'Landskrona', 'Trelleborg', 'Ystad', 'Eslöv', 'Staffanstorp', 'Vellinge', 'Kävlinge', 'Svedala', 'Lomma']
 
 export function About() {
   usePageTitle('Om oss')
@@ -104,12 +107,36 @@ export function About() {
         </div>
       </Section>
 
-      <Section eyebrow="Verksamhetsområde" title={`Vi finns i ${company.serviceArea}`}>
-        <p className="max-w-2xl text-lg text-steel-500">
-          Vår bas finns i {company.address.city}, men vi tar uppdrag i hela regionen. Vid större
-          projekt och serviceavtal arbetar vi även utanför vårt ordinarie område – hör av dig så
-          berättar vi mer.
-        </p>
+      <Section>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p className="eyebrow">Verksamhetsområde</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Vi finns i {company.serviceArea}</h2>
+            <p className="mt-5 text-lg leading-relaxed text-steel-500">
+              Vår bas finns i {company.address.city}, men vi tar uppdrag i hela regionen. Vid större
+              projekt och serviceavtal arbetar vi även utanför vårt ordinarie område – hör av dig så
+              berättar vi mer.
+            </p>
+          </div>
+          <div className="card p-7">
+            <div className="flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 ring-1 ring-brand-100">
+                <MapPin className="size-5" strokeWidth={1.75} />
+              </div>
+              <h3 className="font-semibold">Orter vi ofta arbetar i</h3>
+            </div>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {towns.map((t) => (
+                <li key={t} className="rounded-full bg-ice-100 px-3.5 py-1.5 text-sm font-medium text-navy-900">
+                  {t}
+                </li>
+              ))}
+              <li className="rounded-full border border-dashed border-steel-300 px-3.5 py-1.5 text-sm text-steel-500">
+                + hela Skåne
+              </li>
+            </ul>
+          </div>
+        </div>
       </Section>
 
       <CtaBand />

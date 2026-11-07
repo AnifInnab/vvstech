@@ -17,18 +17,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-steel-100 bg-white/90 backdrop-blur-md">
-      <div className="hidden border-b border-steel-100 bg-ice-50 md:block">
-        <div className="container-x flex h-9 items-center justify-between text-xs">
-          <span className="text-steel-500">Auktoriserat VVS-företag · Säker Vatten · {company.serviceArea}</span>
-          <div className="flex items-center gap-5">
-            <span className="text-steel-500">{company.hours.weekdays}</span>
-            <a href={company.emergencyPhoneHref} className="font-semibold text-navy-900 hover:text-brand-600">
-              Jour 24/7: {company.emergencyPhone}
-            </a>
-          </div>
-        </div>
-      </div>
-
       <div className="container-x flex h-18 items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="VVS tech – startsida">
           <img src={asset('logo.svg')} alt="VVS tech" className="h-8 w-auto sm:h-9" />

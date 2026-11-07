@@ -76,7 +76,7 @@ export function Home() {
 
         <div className="container-x relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-7">
-            <p className="eyebrow">Auktoriserat VVS-företag · {company.serviceArea}</p>
+            <p className="eyebrow">Auktoriserat VVS-företag i Skåne</p>
             <h1 className="mt-5 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
               Teknik för hållbara <span className="text-brand-600">inomhusmiljöer</span>
             </h1>
