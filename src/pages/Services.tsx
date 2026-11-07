@@ -7,7 +7,7 @@ import { pillars, services, type ServiceCategory } from '../data/services'
 import { usePageTitle } from '../lib/utils'
 
 type Filter = 'Alla' | ServiceCategory
-const filters: Filter[] = ['Alla', 'Värme', 'Vatten', 'Ventilation', 'Kyla', 'Entreprenad']
+const filters: Filter[] = ['Alla', 'Värme', 'Vatten', 'Kyla', 'Entreprenad']
 
 export function Services() {
   usePageTitle('Tjänster')
@@ -19,11 +19,11 @@ export function Services() {
       <PageHero
         eyebrow="Tjänster"
         title="Våra tjänster"
-        lead="Vi erbjuder helhetslösningar inom värme, vatten, ventilation och kyla – för privatpersoner, bostadsrättsföreningar, förvaltare och byggföretag."
+        lead="Vi erbjuder helhetslösningar inom värme, vatten och kyla – för privatpersoner, bostadsrättsföreningar, förvaltare och byggföretag."
       />
 
       <section className="border-b border-steel-100 bg-white">
-        <div className="container-x grid divide-y divide-steel-100 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+        <div className="container-x grid divide-y divide-steel-100 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
           {pillars.map((p) => {
             const Icon = p.icon
             const selected = active === p.title
@@ -32,7 +32,7 @@ export function Services() {
                 key={p.title}
                 type="button"
                 onClick={() => setActive(p.title)}
-                className="group flex gap-4 py-7 text-left lg:px-8 lg:first:pl-0 lg:last:pr-0"
+                className="group flex gap-4 py-7 text-left sm:px-8 sm:first:pl-0 sm:last:pr-0"
               >
                 <div
                   className={`flex size-11 shrink-0 items-center justify-center rounded-lg ring-1 transition-colors ${

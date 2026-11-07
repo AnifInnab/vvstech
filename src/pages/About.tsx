@@ -59,8 +59,8 @@ export function About() {
               <p>
                 {company.name} startade som en klassisk rörfirma med fokus på service och
                 badrumsrenoveringar. I takt med att kraven på energieffektivitet och inomhusklimat
-                ökat har vi breddat kompetensen till att omfatta hela kedjan: värme, vatten,
-                ventilation och kyla.
+                ökat har vi breddat kompetensen till att omfatta hela kedjan: värme, vatten och
+                kyla.
               </p>
               <p>
                 Idag är vi ett team av VVS-montörer, kyltekniker och projektledare som arbetar med

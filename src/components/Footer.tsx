@@ -13,7 +13,7 @@ export function Footer() {
         <div className="lg:col-span-4">
           <img src={asset('logo-white.svg')} alt="VVS tech" className="h-9 w-auto" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
-            {company.tagline}. Vi är en auktoriserad VVS-firma som levererar värme, vatten, ventilation
+            {company.tagline}. Vi är en auktoriserad VVS-firma som levererar värme, vatten
             och kyla med hög kvalitet till privatpersoner, bostadsrättsföreningar och fastighetsägare i{' '}
             {company.serviceArea}.
           </p>

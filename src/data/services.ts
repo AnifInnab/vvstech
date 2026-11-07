@@ -3,7 +3,6 @@ import {
   Bath,
   Building2,
   Droplets,
-  Fan,
   Flame,
   Layers,
   PhoneCall,
@@ -12,7 +11,7 @@ import {
   Wrench,
 } from 'lucide-react'
 
-export type ServiceCategory = 'Värme' | 'Vatten' | 'Ventilation' | 'Kyla' | 'Entreprenad'
+export type ServiceCategory = 'Värme' | 'Vatten' | 'Kyla' | 'Entreprenad'
 
 export interface Service {
   slug: string
@@ -90,6 +89,7 @@ export const services: Service[] = [
     short: 'Vattenburen värme som är snygg, tyst och energieffektiv.',
     category: 'Värme',
     icon: Thermometer,
+    featured: true,
     intro:
       'Vi projekterar och installerar vattenburen golvvärme och radiatorsystem i både nya och befintliga byggnader. Rätt dimensionering och injustering ger lägre driftkostnad och bättre komfort.',
     bullets: [
@@ -102,29 +102,12 @@ export const services: Service[] = [
     audience: 'Privatpersoner, byggföretag och fastighetsägare',
   },
   {
-    slug: 'ventilation',
-    title: 'Ventilation',
-    short: 'Frisk luft och god energiåtervinning med FTX, frånluft och OVK.',
-    category: 'Ventilation',
-    icon: Fan,
-    featured: true,
-    intro:
-      'Bra ventilation är avgörande för hälsa, byggnad och energiförbrukning. Vi installerar och servar ventilationssystem för bostäder och lokaler och hjälper till med obligatorisk ventilationskontroll (OVK).',
-    bullets: [
-      'FTX-aggregat med värmeåtervinning',
-      'Frånluftssystem och köksfläktar',
-      'OVK-besiktning och åtgärder',
-      'Rengöring och filterbyte',
-      'Injustering av luftflöden',
-    ],
-    audience: 'Villor, flerbostadshus och kommersiella lokaler',
-  },
-  {
     slug: 'kyla-ac',
     title: 'Kyla & luftkonditionering',
     short: 'Behagligt inomhusklimat även på sommaren – certifierade kyltekniker.',
     category: 'Kyla',
     icon: Snowflake,
+    featured: true,
     intro:
       'Vi installerar och servar kyl- och komfortkylanläggningar för både hem och verksamheter. Våra kyltekniker är certifierade för köldmediehantering och vi utför lagstadgade läckagekontroller.',
     bullets: [
@@ -180,7 +163,7 @@ export const services: Service[] = [
       'Vi utför alla VVS-installationer vid nyproduktion och tillbyggnad – som underentreprenör till byggföretag eller direkt mot beställare. Vi arbetar med moderna metoder, digital dokumentation och tydlig uppföljning.',
     bullets: [
       'Projektering och kalkyl',
-      'Värme, vatten, avlopp och ventilation',
+      'Värme, vatten och avlopp',
       'Samordning med övriga entreprenörer',
       'Egenkontroller och relationshandlingar',
       'Totalentreprenad eller utförandeentreprenad',
@@ -209,7 +192,6 @@ export const services: Service[] = [
 export const pillars: { title: ServiceCategory; icon: LucideIcon; text: string }[] = [
   { title: 'Värme', icon: Flame, text: 'Värmepumpar, fjärrvärme, golvvärme och radiatorer.' },
   { title: 'Vatten', icon: Droplets, text: 'Tappvatten, avlopp, badrum och service.' },
-  { title: 'Ventilation', icon: Fan, text: 'FTX, frånluft, OVK och injustering.' },
   { title: 'Kyla', icon: Snowflake, text: 'Komfortkyla, AC och köldmediekontroll.' },
 ]
 

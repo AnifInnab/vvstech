@@ -81,7 +81,7 @@ export function Home() {
               Teknik för hållbara <span className="text-brand-600">inomhusmiljöer</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-steel-500">
-              Värme, vatten, ventilation och kyla – installerat, servat och optimerat av certifierade
+              Värme, vatten och kyla – installerat, servat och optimerat av certifierade
               tekniker. Från läckande kran till komplett stambyte.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -142,11 +142,11 @@ export function Home() {
 
       {/* Pillars */}
       <section className="border-y border-steel-100 bg-white">
-        <div className="container-x grid divide-y divide-steel-100 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+        <div className="container-x grid divide-y divide-steel-100 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
           {pillars.map((p) => {
             const Icon = p.icon
             return (
-              <div key={p.title} className="flex gap-4 py-7 lg:px-8 lg:first:pl-0 lg:last:pr-0">
+              <div key={p.title} className="flex gap-4 py-7 sm:px-8 sm:first:pl-0 sm:last:pr-0">
                 <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 ring-1 ring-brand-100">
                   <Icon className="size-5" strokeWidth={1.75} />
                 </div>
@@ -179,7 +179,7 @@ export function Home() {
               <p className="eyebrow text-brand-300">+{services.length - featured.length} tjänster till</p>
               <h3 className="mt-3 text-2xl font-bold text-white">Se hela vårt utbud</h3>
               <p className="mt-2 text-sm text-white/75">
-                Stambyte, avlopp, nyproduktion, kyla, jour och mer.
+                Stambyte, avlopp, nyproduktion, jour och mer.
               </p>
             </div>
             <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold">
