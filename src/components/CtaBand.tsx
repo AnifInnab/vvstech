@@ -8,8 +8,9 @@ export function CtaBand() {
       <div className="container-x">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-800 to-brand-700 px-7 py-12 text-white shadow-glow sm:px-12 sm:py-16">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="brand-slash absolute -right-20 top-0 h-full w-[34%] bg-white/[0.04]" />
-            <div className="brand-slash absolute -right-44 top-0 h-full w-[24%] bg-brand-400/20" />
+            <div className="absolute -right-16 -top-16 size-56 rounded-full bg-brand-400/20 blur-3xl md:hidden" />
+            <div className="brand-slash absolute -right-20 top-0 hidden h-full w-[34%] bg-white/[0.04] md:block" />
+            <div className="brand-slash absolute -right-44 top-0 hidden h-full w-[24%] bg-brand-400/20 md:block" />
           </div>
           <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">

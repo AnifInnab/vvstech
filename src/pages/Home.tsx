@@ -64,8 +64,9 @@ export function Home() {
       {/* Hero – ljus, luftig, med logotypens slash-former som mjuk dekor */}
       <section className="relative overflow-hidden bg-gradient-to-b from-ice-100 via-ice-50 to-white">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="brand-slash absolute -right-16 top-0 h-full w-[44%] bg-brand-100/50" />
-          <div className="brand-slash absolute -right-40 top-0 h-full w-[30%] bg-brand-200/40" />
+          <div className="absolute -right-24 -top-24 size-80 rounded-full bg-brand-100/60 blur-3xl md:hidden" />
+          <div className="brand-slash absolute -right-16 top-0 hidden h-full w-[44%] bg-brand-100/50 md:block" />
+          <div className="brand-slash absolute -right-40 top-0 hidden h-full w-[30%] bg-brand-200/40 md:block" />
           <img
             src={asset('favicon.svg')}
             alt=""
@@ -109,7 +110,7 @@ export function Home() {
 
           <aside className="lg:col-span-5">
             <div className="card relative overflow-hidden p-7 sm:p-8">
-              <div className="brand-slash absolute -right-6 -top-6 h-24 w-28 bg-brand-50" aria-hidden />
+              <div className="absolute -right-10 -top-10 size-32 rounded-full bg-brand-50" aria-hidden />
               <p className="eyebrow">Så här går det till</p>
               <h2 className="mt-2 text-2xl font-bold">Kostnadsfri offert inom en arbetsdag</h2>
               <ol className="mt-6 space-y-4">
